@@ -1,0 +1,29 @@
+{
+    "name": "kiwi-suite/pushing-kiwi-client",
+    "description": "kiwi-suite/pushing-kiwi-client php client for pushing.kiwi",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Thomas Payer"
+        }
+    ],
+    "require": {
+        "php": "^5.6 | ^7.1",
+        "zendframework/zend-diactoros": "^1.6"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.0.6",
+        "friendsofphp/php-cs-fixer": "^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "KiwiSuite\\PushingKiwiClient\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "KiwiSuiteTest\\PushingKiwiClient\\": "tests/src/"
+        }
+    }
+}
