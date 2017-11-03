@@ -57,8 +57,6 @@ final class IosMessage implements MessageInterface
                     continue;
                 }
                 $value = \array_unique(\array_values($value));
-            } else {
-                continue;
             }
 
             $this->attributes[$attrName] = $value;

@@ -2,6 +2,13 @@
 
 # kiwi-suite/pushing-kiwi-client
 
+
+[![Build Status](https://travis-ci.org/kiwi-suite/pushing-kiwi-client.svg?branch=master)](https://travis-ci.org/kiwi-suite/pushing-kiwi-client)
+[![Coverage Status](https://coveralls.io/repos/github/kiwi-suite/pushing-kiwi-client/badge.svg?branch=master)](https://coveralls.io/github/kiwi-suite/pushing-kiwi-client?branch=master)
+[![Packagist](https://img.shields.io/packagist/v/kiwi-suite/pushing-kiwi-client.svg)](https://packagist.org/packages/kiwi-suite/pushing-kiwi-client)
+[![Packagist Pre Release](https://img.shields.io/packagist/vpre/kiwi-suite/pushing-kiwi-client.svg)](https://packagist.org/packages/kiwi-suite/pushing-kiwi-client)
+[![Packagist](https://img.shields.io/packagist/l/kiwi-suite/pushing-kiwi-client.svg)](https://packagist.org/packages/kiwi-suite/pushing-kiwi-client)
+
 ## Installation
 
 The suggested installation method is via [composer](https://getcomposer.org/):

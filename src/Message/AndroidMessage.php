@@ -39,14 +39,15 @@ final class AndroidMessage implements MessageInterface
                     continue;
                 }
                 $value = \array_unique(\array_values($value));
-            } else {
-                continue;
             }
 
             $this->attributes[$attrName] = $value;
         }
     }
 
+    /**
+     * @return array
+     */
     public function getMessageChunks()
     {
         $result = [];
@@ -61,6 +62,9 @@ final class AndroidMessage implements MessageInterface
         return $result;
     }
 
+    /**
+     * @return array
+     */
     public function jsonSerialize()
     {
         return [
