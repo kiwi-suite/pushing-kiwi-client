@@ -61,6 +61,7 @@ class AndroidMessageTest extends TestCase
 
 
         $options = [
+            'payload' => "string",
             'deviceIds' => ["12345", "a key" => "1234", "12345"],
         ];
         $androidMessage = new AndroidMessage($options);
