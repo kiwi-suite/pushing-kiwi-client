@@ -57,7 +57,7 @@ final class Notification implements \JsonSerializable
             ->withAddedHeader('authorization', 'Bearer ' . $this->token)
             ->withAddedHeader('content-type', 'application/json');
 
-        $request->getBody()->write(json_encode($this));
+        $request->getBody()->write(\json_encode($this));
 
         return $request;
     }
