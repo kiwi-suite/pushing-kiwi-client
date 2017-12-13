@@ -11,8 +11,8 @@ namespace KiwiSuite\PushingKiwiClient;
 
 use KiwiSuite\PushingKiwiClient\Exception\InvalidArgumentException;
 use KiwiSuite\PushingKiwiClient\Message\MessageInterface;
-use Zend\Diactoros\CallbackStream;
 use Zend\Diactoros\Request;
+use Zend\Diactoros\Stream;
 use Zend\Diactoros\Uri;
 
 final class Notification implements \JsonSerializable
@@ -50,14 +50,16 @@ final class Notification implements \JsonSerializable
      */
     public function createHttpRequest()
     {
-        return (new Request())
+        $request = (new Request())
             ->withUri(new Uri("https://pushing.kiwi/api/v1/send/"))
             ->withMethod('POST')
-            ->withBody(new CallbackStream(function () {
-                return \json_encode($this);
-            }))
-            ->withAddedHeader('Authorization', 'Bearer ' . $this->token)
-            ->withAddedHeader('Content-Type', 'application/json');
+            ->withBody(new Stream("php://memory", "r+"))
+            ->withAddedHeader('authorization', 'Bearer ' . $this->token)
+            ->withAddedHeader('content-type', 'application/json');
+
+        $request->getBody()->write(\json_encode($this));
+
+        return $request;
     }
 
     /**
